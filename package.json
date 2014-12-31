@@ -10,6 +10,7 @@
   "author": "Kevin Stock",
   "license": "ISC",
   "dependencies": {
-    "jenkins-api": "~0.2"
+    "jenkins-api": "~0.2",
+    "pi-gpio": "0.0.6"
   }
 }
