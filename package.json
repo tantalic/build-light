@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Raspberry Pi powered traffic light to display the build status from a Jenkins continuous integration server.",
   "main": "index.js",
+  "bin": {
+    "build-light": "index.js"
+  },
+  "preferGlobal": true,
   "keywords": [
     "raspberrypi",
     "jenkins"
