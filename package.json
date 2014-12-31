@@ -8,5 +8,8 @@
     "jenkins"
   ],
   "author": "Kevin Stock",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "jenkins-api": "~0.2"
+  }
 }
