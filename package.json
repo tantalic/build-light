@@ -1,0 +1,12 @@
+{
+  "name": "traffic-light",
+  "version": "1.0.0",
+  "description": "Raspberry Pi powered traffic light to display the build status from a Jenkins continuous integration server.",
+  "main": "index.js",
+  "keywords": [
+    "raspberrypi",
+    "jenkins"
+  ],
+  "author": "Kevin Stock",
+  "license": "ISC"
+}
