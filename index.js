@@ -24,8 +24,19 @@ var CONFIG = {
  * Modules
  */
 var jenkins = require('jenkins-api').init(CONFIG.JENKINS_BASE_URL),
-    gpio    = require("pi-gpio");
+    gpio    = require("pi-gpio"),
+    program = require('commander'),
+    path    = require('path'),
+    package = require( path.join(__dirname, 'package.json') );
 
+
+/*
+ * Command Line Interface
+ */
+program
+    .version(package.version)
+    .option('-v, --verbose', 'output light color')
+    .parse(process.argv);
 
 /*
  * Main Function
@@ -93,7 +104,9 @@ function set_light_color (color) {
     set_pin(CONFIG.PIN_NUMBER_YELLOW, 'yellow'===color);
     set_pin(CONFIG.PIN_NUMBER_GREEN,  'green'===color);
 
-    console.log(color);
+    if ( program.verbose === true ) {
+        console.log(color);
+    }
 }
 
 
