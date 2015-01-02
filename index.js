@@ -14,17 +14,13 @@ var CONFIG = {
     'PIN_NUMBER_RED': process.env.PIN_NUMBER_RED       || 3,
     'PIN_NUMBER_YELLOW': process.env.PIN_NUMBER_YELLOW || 1,
     'PIN_NUMBER_GREEN': process.env.PIN_NUMBER_GREEN   || 0,
-
-    // GPIO Values
-    'PIN_VALUE_ON': process.env.PIN_VALUE_ON   || 0,
-    'PIN_VALUE_OFF': process.env.PIN_VALUE_OFF || 1,
 };
 
 /*
  * Modules
  */
 var jenkins = require('jenkins-api').init(CONFIG.JENKINS_BASE_URL),
-    gpio    = require("pi-gpio"),
+    gpio    = require("./gpio"),
     program = require('commander'),
     path    = require('path'),
     package = require( path.join(__dirname, 'package.json') );
@@ -53,8 +49,16 @@ function main () {
 }
 main();
 
+
 /*
- * Helper Functions
+ * Private Variables
+ */
+var redLight    = gpio.pin(CONFIG.PIN_NUMBER_RED),
+    yellowLight = gpio.pin(CONFIG.PIN_NUMBER_YELLOW),
+    greenLight  = gpio.pin(CONFIG.PIN_NUMBER_GREEN);
+
+/*
+ * Private Functions
  */
 
 function job_is_building (job) {
@@ -89,20 +93,10 @@ function color_for_jobs (jobs) {
     return color;
 }
 
-function set_pin (pin, on) {
-    var value = on ? CONFIG.PIN_VALUE_ON : CONFIG.PIN_VALUE_OFF;
-
-    gpio.open(pin, "output", function(err) {  // Open pin for output
-        gpio.write(pin, value, function() {   // Set pin value
-            gpio.close(pin);                  // Close pin
-        });
-    });
-}
-
 function set_light_color (color) {
-    set_pin(CONFIG.PIN_NUMBER_RED,    'red'===color);
-    set_pin(CONFIG.PIN_NUMBER_YELLOW, 'yellow'===color);
-    set_pin(CONFIG.PIN_NUMBER_GREEN,  'green'===color);
+    ('red'===color)    ? redLight.turnOn()    : redLight.turnOff();
+    ('yellow'===color) ? yellowLight.turnOn() : yellowLight.turnOff();
+    ('green'===color)  ? greenLight.turnOn()  : greenLight.turnOff();
 
     if ( program.verbose === true ) {
         console.log(color);
