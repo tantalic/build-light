@@ -40,13 +40,15 @@ program
  * Main Function
  */
 function main () {
+    var interval = parseFloat(CONFIG.CHECK_INTERVAL) * 1000;
+
     jenkins.all_jobs(function (error, jobs) {
         // Set the color of the light
         var color = color_for_jobs(jobs);
         set_light_color(color);
 
-        // Check again after CONFIG.CHECK_INTERVAL
-        setTimeout(main, CONFIG.CHECK_INTERVAL*1000);
+        // Check again after interval
+        setTimeout(main, interval);
     });
 }
 main();

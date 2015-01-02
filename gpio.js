@@ -65,15 +65,19 @@ function getPinValuePath (pinNumber) {
  */
 module.exports = {
     pin: function (pinNumber) {
+        var pinNumber = parseInt(pinNumber, 10),
+            onValue   = parseInt(CONFIG.PIN_VALUE_ON, 10),
+            offValue  = parseInt(CONFIG.PIN_VALUE_OFF, 10);
+
         openPin(pinNumber);
         writeToPin(pinNumber, CONFIG.PIN_VALUE_OFF);
 
         return {
             turnOn: function () {
-                writeToPin(pinNumber, CONFIG.PIN_VALUE_ON);
+                writeToPin(pinNumber, onValue);
             },
             turnOff: function () {
-                writeToPin(pinNumber, CONFIG.PIN_VALUE_OFF);
+                writeToPin(pinNumber, offValue);
             }
         }
     }
