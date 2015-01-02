@@ -16,6 +16,7 @@ var CONFIG = {
     'PIN_NUMBER_GREEN': process.env.PIN_NUMBER_GREEN   || 0,
 };
 
+
 /*
  * Modules
  */
@@ -33,6 +34,7 @@ program
     .version(package.version)
     .option('-v, --verbose', 'output light color')
     .parse(process.argv);
+
 
 /*
  * Main Function
@@ -56,6 +58,7 @@ main();
 var redLight    = gpio.pin(CONFIG.PIN_NUMBER_RED),
     yellowLight = gpio.pin(CONFIG.PIN_NUMBER_YELLOW),
     greenLight  = gpio.pin(CONFIG.PIN_NUMBER_GREEN);
+
 
 /*
  * Private Functions
@@ -105,9 +108,11 @@ function set_light_color (color) {
 
 
 /*
- * String.prototype.endsWith() Polyfill
- * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith
+ * Polyfills
  */
+
+// String.prototype.endsWith()
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith
 if (!String.prototype.endsWith) {
   Object.defineProperty(String.prototype, 'endsWith', {
     value: function(searchString, position) {
@@ -122,10 +127,9 @@ if (!String.prototype.endsWith) {
   });
 }
 
-/*
- * Array.prototype.includes() Polyfill
- * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
- */
+
+// Array.prototype.includes()
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
 if (![].includes) {
   Array.prototype.includes = function(searchElement /*, fromIndex*/ ) {'use strict';
     if (this === undefined || this === null) {
