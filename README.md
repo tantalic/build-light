@@ -83,6 +83,11 @@ WantedBy=multi-user.target
 ```
 
 
+## In the wild
+
+The build-light installation at [Toolhouse][th]:
+![][th-light]
+
 [jenkins]: https://jenkins-ci.org
 [npm]: https://www.npmjs.com
 [12-factor-config]: http://12factor.net/config
@@ -91,3 +96,5 @@ WantedBy=multi-user.target
 [gpio-22]: http://pi.gadgetoid.com/pinout/pin15_gpio22
 [env]: https://www.gnu.org/software/coreutils/manual/coreutils.html#env-invocation
 [systemd]: http://freedesktop.org/wiki/Software/systemd/
+[th-light]: https://farm3.staticflickr.com/2876/9917676435_2168767722_b_d.jpg
+[th]: http://www.toolhouse.com/?utm_source=Kevin&utm_medium=GitHub&utm_campaign=build-light
