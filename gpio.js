@@ -7,9 +7,9 @@
  */
 var CONFIG = {
     // GPIO Values
-    'PIN_VALUE_ON':   process.env.PIN_VALUE_ON   || 0,
-    'PIN_VALUE_OFF':  process.env.PIN_VALUE_OFF  || 1,
-    'GPIO_BASE_PATH': process.env.GPIO_BASE_PATH || '/sys/class/gpio',
+    'PIN_VALUE_ON':    process.env.PIN_VALUE_ON   || 0,
+    'PIN_VALUE_OFF':   process.env.PIN_VALUE_OFF  || 1,
+    'GPIO_BASE_PATH': (process.env.GPIO_BASE_PATH || '/sys/class/gpio').trim(),
 };
 
 /*

@@ -11,16 +11,16 @@ var CONFIG = {
     'CHECK_INTERVAL':   process.env.CHECK_INTERVAL   || 15 * 60, // Every 15 minutes
 
     // GPIO Pins
-    'PIN_NUMBER_RED': process.env.PIN_NUMBER_RED       || 17,
-    'PIN_NUMBER_YELLOW': process.env.PIN_NUMBER_YELLOW || 27,
-    'PIN_NUMBER_GREEN': process.env.PIN_NUMBER_GREEN   || 15,
+    'PIN_NUMBER_RED':    process.env.PIN_NUMBER_RED     || 17,
+    'PIN_NUMBER_YELLOW': process.env.PIN_NUMBER_YELLOW  || 27,
+    'PIN_NUMBER_GREEN':  process.env.PIN_NUMBER_GREEN   || 15,
 };
 
 
 /*
  * Modules
  */
-var jenkins = require('jenkins-api').init(CONFIG.JENKINS_BASE_URL),
+var jenkins = require('jenkins-api').init(CONFIG.JENKINS_BASE_URL.trim()),
     gpio    = require("./gpio"),
     program = require('commander'),
     path    = require('path'),
