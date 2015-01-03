@@ -20,7 +20,7 @@ var CONFIG = {
 /*
  * Modules
  */
-var jenkins = require('jenkins-api').init(CONFIG.JENKINS_BASE_URL),
+var jenkins = require('jenkins-api').init(CONFIG.JENKINS_BASE_URL.trim()),
     gpio    = require("./gpio"),
     program = require('commander'),
     path    = require('path'),
