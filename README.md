@@ -21,10 +21,12 @@ Build Light has been with the following software and hardware.
 ### Hardware 
 
 - [Raspberry Pi Model B][pi-b]
+- [Raspberry Pi Model B+][pi-b-plus]
 
 ### Operating Systems
 
 - [Arch Linux ARM][arch]
+- [Raspbian][raspbian]
 
 
 ## Installation & Usage
@@ -113,4 +115,6 @@ The build-light installation at [Toolhouse][th]:
 [th-light]: https://farm3.staticflickr.com/2876/9917676435_2168767722_b_d.jpg
 [th]: http://www.toolhouse.com/?utm_source=Kevin&utm_medium=GitHub&utm_campaign=build-light
 [arch]: http://archlinuxarm.org/platforms/armv6/raspberry-pi
+[raspbian]: http://www.raspbian.org/RaspbianImages
 [pi-b]: http://www.raspberrypi.org/products/model-b/
+[pi-b-plus]: http://www.raspberrypi.org/products/model-b-plus/
