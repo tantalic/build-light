@@ -1,8 +1,10 @@
 # Build Light
 
-Monitor the status of your continuous integration server with a Raspberry Pi
-powered traffic light. Build Light will regularly poll your CI server to check
-the status of yours jobs and update the color of the light accordingly:
+Build Light is a daemon, designed to run on single-board/development-board 
+computers, that regularly polls your continuous integration server and reports 
+build status through GPIO connected devices. It is primarily intended to control
+a modified traffic light through a relay module although it can also control
+LEDs connected directly to your board.
 
 - **Red** - One or more builds has failed.
 - **Yellow** - One or more jobs is currently building.
