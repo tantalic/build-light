@@ -1,7 +1,7 @@
 {
   "name": "build-light",
-  "version": "1.0.3",
-  "description": "Raspberry Pi powered traffic light to display the build status from a Jenkins continuous integration server.",
+  "version": "1.0.4",
+  "description": "A daemon, designed to run on single-board/development-board computers, that regularly polls your continuous integration server and reports build status through GPIO connected devices.",
   "repository": {
     "type": "git",
     "url": "https://github.com/tantalic/build-light.git"
@@ -12,8 +12,13 @@
   },
   "preferGlobal": true,
   "keywords": [
+    "buildlight",
+    "build-light",
+    "jenkins",
+    "ci",
+    "gpio",
     "raspberrypi",
-    "jenkins"
+    "beaglebone"
   ],
   "author": "Kevin Stock",
   "license": "ISC",

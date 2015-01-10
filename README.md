@@ -1,16 +1,36 @@
 # Build Light
 
-Monitor the status of your continuous integration server with a Raspberry Pi
-powered traffic light. Build Light will regularly poll your CI server to check
-the status of yours jobs and update the color of the light accordingly:
+Build Light is a daemon, designed to run on single-board/development-board 
+computers, that regularly polls your continuous integration server and reports 
+build status through GPIO connected devices. It is primarily intended to control
+a modified traffic light through a relay module although it can also control
+LEDs connected directly to your board.
 
 - **Red** - One or more builds has failed.
 - **Yellow** - One or more jobs is currently building.
 - **Green** - All jobs have successful builds.
 
-### Supported servers
+
+
+## Supported Environments
+
+Build Light is known to work with the following software and hardware:
+
+### Continuous Integration Servers 
 
 - [Jenkins][jenkins]
+
+### Hardware 
+
+- [Raspberry Pi Model B][pi-b]
+- [Raspberry Pi Model B+][pi-b-plus]
+- [BeagleBone Black][beagle-black]
+
+### Operating Systems
+
+- [Arch Linux ARM][arch]
+- [Raspbian][raspbian]
+- [Angstrom distribution][angstrom]
 
 
 ## Installation & Usage
@@ -98,3 +118,9 @@ The build-light installation at [Toolhouse][th]:
 [systemd]: http://freedesktop.org/wiki/Software/systemd/
 [th-light]: https://farm3.staticflickr.com/2876/9917676435_2168767722_b_d.jpg
 [th]: http://www.toolhouse.com/?utm_source=Kevin&utm_medium=GitHub&utm_campaign=build-light
+[arch]: http://archlinuxarm.org/platforms/armv6/raspberry-pi
+[raspbian]: http://www.raspbian.org/RaspbianImages
+[pi-b]: http://www.raspberrypi.org/products/model-b/
+[pi-b-plus]: http://www.raspberrypi.org/products/model-b-plus/
+[beagle-black]: http://beagleboard.org/black
+[angstrom]: http://www.angstrom-distribution.org
