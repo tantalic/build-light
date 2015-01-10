@@ -12,8 +12,13 @@
   },
   "preferGlobal": true,
   "keywords": [
+    "buildlight",
+    "build-light",
+    "jenkins",
+    "ci",
+    "gpio",
     "raspberrypi",
-    "jenkins"
+    "beaglebone"
   ],
   "author": "Kevin Stock",
   "license": "ISC",
