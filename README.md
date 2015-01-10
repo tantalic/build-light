@@ -24,11 +24,13 @@ Build Light is known to work with the following software and hardware:
 
 - [Raspberry Pi Model B][pi-b]
 - [Raspberry Pi Model B+][pi-b-plus]
+- [BeagleBone Black][beagle-black]
 
 ### Operating Systems
 
 - [Arch Linux ARM][arch]
 - [Raspbian][raspbian]
+- [Angstrom distribution][angstrom]
 
 
 ## Installation & Usage
@@ -120,3 +122,5 @@ The build-light installation at [Toolhouse][th]:
 [raspbian]: http://www.raspbian.org/RaspbianImages
 [pi-b]: http://www.raspberrypi.org/products/model-b/
 [pi-b-plus]: http://www.raspberrypi.org/products/model-b-plus/
+[beagle-black]: http://beagleboard.org/black
+[angstrom]: http://www.angstrom-distribution.org
