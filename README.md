@@ -12,7 +12,7 @@ the status of yours jobs and update the color of the light accordingly:
 
 ## Supported Environments
 
-Build Light has been with the following software and hardware.
+Build Light is known to work with the following software and hardware:
 
 ### Continuous Integration Servers 
 
