@@ -55,6 +55,16 @@ main();
 
 
 /*
+ * Close pins on exit
+ */
+process.on('exit', close_pins);
+
+process.on('SIGINT', function () {
+    process.exit(2);
+});
+
+
+/*
  * Private Variables
  */
 var redLight    = gpio.pin(CONFIG.PIN_NUMBER_RED),
@@ -106,6 +116,12 @@ function set_light_color (color) {
     if ( program.verbose === true ) {
         console.log(color);
     }
+}
+
+function close_pins () {
+    redLight.close();
+    yellowLight.close();
+    greenLight.close();
 }
 
 
