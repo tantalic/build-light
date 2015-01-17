@@ -36,6 +36,11 @@ function openPin (pinNumber) {
     fs.writeFileSync(pinDirectionPath, 'out');
 }
 
+function closePin (pinNumber) {
+    var unexportPath = getUnexportPath();
+    fs.writeFileSync(unexportPath, pinNumber);
+}
+
 function writeToPin (pinNumber, value) {
     var pinValuePath = getPinValuePath(pinNumber);
     fs.writeFileSync(pinValuePath, value);
@@ -43,6 +48,10 @@ function writeToPin (pinNumber, value) {
 
 function getExportPath () {
     return path.join(CONFIG.GPIO_BASE_PATH, 'export');
+}
+
+function getUnexportPath () {
+    return path.join(CONFIG.GPIO_BASE_PATH, 'unexport');
 }
 
 function getPinPath (pinNumber) {
@@ -78,6 +87,9 @@ module.exports = {
             },
             turnOff: function () {
                 writeToPin(pinNumber, offValue);
+            },
+            close: function () {
+                closePin(pinNumber);
             }
         }
     }
