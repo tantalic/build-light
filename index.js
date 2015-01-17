@@ -55,9 +55,12 @@ main();
 
 
 /*
- * Close pins on exit
+ * Turn off and close pins on exit (including SIGINT)
  */
-process.on('exit', close_pins);
+process.on('exit', function () {
+    turn_light_off();
+    close_pins();
+});
 
 process.on('SIGINT', function () {
     process.exit(2);
@@ -116,6 +119,12 @@ function set_light_color (color) {
     if ( program.verbose === true ) {
         console.log(color);
     }
+}
+
+function turn_light_off () {
+    redLight.turnOff();
+    yellowLight.turnOff();
+    greenLight.turnOff();
 }
 
 function close_pins () {
