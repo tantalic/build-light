@@ -118,7 +118,8 @@ WantedBy=multi-user.target
 
 ## In the wild
 
-The build-light installation at [Toolhouse][th]:
+The following build-light installation at [Toolhouse][th] is used to monitor
+approximately 30 different projects at any given time:
 ![][th-light]
 
 [jenkins]: https://jenkins-ci.org
