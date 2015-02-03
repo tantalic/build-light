@@ -1,4 +1,4 @@
-# Build Light [![Build Status](https://travis-ci.org/tantalic/build-light.svg?branch=develop)](https://travis-ci.org/tantalic/build-light) [![npm Dependencies](https://david-dm.org/tantalic/build-light.png)](https://david-dm.org/tantalic/build-light)
+# Build Light [![Build Status](https://travis-ci.org/tantalic/build-light.svg?branch=master)](https://travis-ci.org/tantalic/build-light) [![npm Dependencies](https://david-dm.org/tantalic/build-light.png)](https://david-dm.org/tantalic/build-light)
 
 Build Light is a daemon, designed to run on single-board/development-board 
 computers, that regularly polls your continuous integration server and reports 
