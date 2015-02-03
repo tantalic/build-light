@@ -1,6 +1,6 @@
 {
   "name": "build-light",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A daemon, designed to run on single-board/development-board computers, that regularly polls your continuous integration server and reports build status through GPIO connected devices.",
   "repository": {
     "type": "git",
