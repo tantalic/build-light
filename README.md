@@ -49,13 +49,16 @@ Configuration is controlled through environment variables (following the
 [twelve-factor methodology][12-factor-config]). You should adjust the following
 environment variables to meet your needs:
 
+#### Continuous Integration Server
+
 |      Variable      |               Description               |       Default Value       |
 |--------------------|-----------------------------------------|---------------------------|
 | `JENKINS_BASE_URL` | The base URL of your Jenkins CI server. | https://builds.apache.org |
 | `CHECK_INTERVAL`   | The polling interval, in seconds.       | 900 *(15 minutes)*        |
 
-In addition, the following variables may need to be adjusted based upon the
-physical wiring of your Raspberry Pi:
+#### GPIO Pin Wiring
+You can configure which GPIO pins control each color light for your setup. (The
+default values have been selected for easy wiring on a Raspberry Pi Rev. 2.)
 
 |       Variable      |                         Description                         | Default Value |
 |---------------------|-------------------------------------------------------------|---------------|
