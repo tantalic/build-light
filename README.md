@@ -66,6 +66,16 @@ default values have been selected for easy wiring on a Raspberry Pi Rev. 2.)
 | `PIN_NUMBER_YELLOW` | The GPIO pin that will be used to control the yellow light. | [27][gpio-27] |
 | `PIN_NUMBER_GREEN`  | The GPIO pin that will be used to control the green light.  | [22][gpio-22] |
 
+#### Pin On/Off Values
+The default configuration for GPIO pin on/off values is designed to work with 
+an active low relay card. If you are using LEDs or an active high relay you may
+wish to change these values:
+
+|     Variable    |                           Description                           | Default Value |
+|-----------------|-----------------------------------------------------------------|---------------|
+| `PIN_VALUE_ON`  | The value that will be output to GPIO pins to turn a light on.  |             0 |
+| `PIN_VALUE_OFF` | The value that will be output to GPIO pins to turn a light off. |             0 |
+
 
 ### Usage
 
