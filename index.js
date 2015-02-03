@@ -13,7 +13,7 @@ var CONFIG = {
     // GPIO Pins
     'PIN_NUMBER_RED':    process.env.PIN_NUMBER_RED     || 17,
     'PIN_NUMBER_YELLOW': process.env.PIN_NUMBER_YELLOW  || 27,
-    'PIN_NUMBER_GREEN':  process.env.PIN_NUMBER_GREEN   || 15,
+    'PIN_NUMBER_GREEN':  process.env.PIN_NUMBER_GREEN   || 22,
 };
 
 
@@ -52,6 +52,19 @@ function main () {
     });
 }
 main();
+
+
+/*
+ * Turn off and close pins on exit (including SIGINT)
+ */
+process.on('exit', function () {
+    turn_light_off();
+    close_pins();
+});
+
+process.on('SIGINT', function () {
+    process.exit(2);
+});
 
 
 /*
@@ -106,6 +119,18 @@ function set_light_color (color) {
     if ( program.verbose === true ) {
         console.log(color);
     }
+}
+
+function turn_light_off () {
+    redLight.turnOff();
+    yellowLight.turnOff();
+    greenLight.turnOff();
+}
+
+function close_pins () {
+    redLight.close();
+    yellowLight.close();
+    greenLight.close();
 }
 
 

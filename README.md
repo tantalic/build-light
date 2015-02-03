@@ -1,4 +1,4 @@
-# Build Light
+# Build Light [![Build Status](https://travis-ci.org/tantalic/build-light.svg?branch=develop)](https://travis-ci.org/tantalic/build-light) [![npm Dependencies](https://david-dm.org/tantalic/build-light.png)](https://david-dm.org/tantalic/build-light)
 
 Build Light is a daemon, designed to run on single-board/development-board 
 computers, that regularly polls your continuous integration server and reports 
@@ -49,19 +49,32 @@ Configuration is controlled through environment variables (following the
 [twelve-factor methodology][12-factor-config]). You should adjust the following
 environment variables to meet your needs:
 
+#### Continuous Integration Server
+
 |      Variable      |               Description               |       Default Value       |
 |--------------------|-----------------------------------------|---------------------------|
 | `JENKINS_BASE_URL` | The base URL of your Jenkins CI server. | https://builds.apache.org |
 | `CHECK_INTERVAL`   | The polling interval, in seconds.       | 900 *(15 minutes)*        |
 
-In addition, the following variables may need to be adjusted based upon the
-physical wiring of your Raspberry Pi:
+#### GPIO Pin Wiring
+You can configure which GPIO pins control each color light for your setup. (The
+default values have been selected for easy wiring on a Raspberry Pi Rev. 2.)
 
 |       Variable      |                         Description                         | Default Value |
 |---------------------|-------------------------------------------------------------|---------------|
 | `PIN_NUMBER_RED`    | The GPIO pin that will be used to control the red light.    | [17][gpio-17] |
 | `PIN_NUMBER_YELLOW` | The GPIO pin that will be used to control the yellow light. | [27][gpio-27] |
 | `PIN_NUMBER_GREEN`  | The GPIO pin that will be used to control the green light.  | [22][gpio-22] |
+
+#### Pin On/Off Values
+The default configuration for GPIO pin on/off values is designed to work with 
+an active low relay card. If you are using LEDs or an active high relay you may
+wish to change these values:
+
+|     Variable    |                           Description                           | Default Value |
+|-----------------|-----------------------------------------------------------------|---------------|
+| `PIN_VALUE_ON`  | The value that will be output to GPIO pins to turn a light on.  |             0 |
+| `PIN_VALUE_OFF` | The value that will be output to GPIO pins to turn a light off. |             0 |
 
 
 ### Usage
@@ -105,7 +118,8 @@ WantedBy=multi-user.target
 
 ## In the wild
 
-The build-light installation at [Toolhouse][th]:
+The following build-light installation at [Toolhouse][th] is used to monitor
+approximately 30 different projects at any given time:
 ![][th-light]
 
 [jenkins]: https://jenkins-ci.org
