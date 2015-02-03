@@ -74,7 +74,7 @@ wish to change these values:
 |     Variable    |                           Description                           | Default Value |
 |-----------------|-----------------------------------------------------------------|---------------|
 | `PIN_VALUE_ON`  | The value that will be output to GPIO pins to turn a light on.  |             0 |
-| `PIN_VALUE_OFF` | The value that will be output to GPIO pins to turn a light off. |             0 |
+| `PIN_VALUE_OFF` | The value that will be output to GPIO pins to turn a light off. |             1 |
 
 
 ### Usage
